@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Belajar matematika bersama Buk Mega</h3>
+
+        <div>
+            <button type="button" class="c1">persegi</button>
+            <button type="button" class="c2">segi3</button>
+            <button type="button" class="c3">bulat</button>
+        </div>
+<br><br>
+    <div id="persegi">
+        <div>
+            nilai sisi
+            <input type="number" class="ss">
+        </div>
+        <div>
+            <button type="button" class="hitungpersegi">hitung luas</button>
+        </div>
+    </div>
+<br>
+    <div id="segi3">
+        <div>
+            nilai alas
+            <input type="number" class="als">
+        </div>
+        <div>
+            nilai tinggi
+            <input type="number" class="tg">
+        </div>
+        <div>
+            <button type="button" class="hitungsegi3">hitung luas</button>
+        </div>
+    </div>
+<br>
+    <div id="bulat">
+        <div>
+            nilai jari-jari
+            <input type="number" class="jj">
+        </div>
+        <div>
+            <button type="button" class="hitungbulat">hitung luas</button>
+        </div>
+    </div>
+    <div id="hasil"></div>
+
+
+    <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+        $('#persegi').hide();
+        $('#segi3').hide();
+        $('#bulat').hide();
+
+        $('.c1').click(function(){
+            $('h3').html('hitung luas persegi');
+            $('#persegi').show(100);
+            $('#segi3').hide(100);
+            $('#bulat').hide(100);
+            $('#hasil').html('');
+        })
+        $('.c2').click(function(){
+            $('h3').html('hitung luas segi3');
+            $('#persegi').hide(100);
+            $('#segi3').show(100);
+            $('#bulat').hide(100);
+            $('#hasil').html('');
+        })
+        $('.c3').click(function(){
+            $('h3').html('hitung luas bulat');
+            $('#persegi').hide(100);
+            $('#segi3').hide(100);
+            $('#bulat').show(100);
+            $('#hasil').html('');
+        });
+        $('.hitungpersegi').click(function(){
+                let p = $('.ss').val();
+
+                let lu = p*p;
+
+                let tx = 'nilai luas dari persegi dengan sisi '+p;
+                tx += ' luas = '+p+' x '+p+'<br>';
+                tx += '<br> jadi luasnya adalah ' +lu;
+
+                $('#hasil').html(tx);
+        });
+        $('.hitungsegi3').click(function(){
+                let a = $('.als').val();
+                let t = $('.tg').val();
+
+                let lu = 0.5*a*t;
+
+                let 
+                tx = 'nilai alas dari segi3 adalah '+a;
+                tx += ' dan tinggi adalah '+t+ '<br>';
+                tx += ' luas segi3 = 1/2 x' +a+ ' x ' +t+'<br>';
+                tx += '<br> jadi luasnya adalah ' +lu;
+
+                $('#hasil').html(tx);
+        });
+        $('.hitungbulat ').click(function(){
+                let r = $('.jj').val();
+
+                let lu = 3.14*r*r;
+
+                let tx = 'nilai jari-jari dari lingkaran adalah '+r;
+                tx += ' luas liangkaran = phi x '+r+' x '+r+'<br>';
+                tx += '<br> jadi luasnya adalah ' +lu;
+
+                $('#hasil').html(tx);
+        });
+    })
+    </script>
+</body>
+</html>

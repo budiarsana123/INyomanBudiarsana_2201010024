@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>judul</h3>
+    <div id="pesan1">isi pesan 1</div>
+    <div class="pesan1">isi class pesan 1</div>
+
+    element html <p></p><span></span><pre></pre> selain h3
+    id => div <span></span>
+
+    <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+                $('h3').html('isi dari judul yang di ganti')
+                $('#pesan1').html('pesan1 di ubah')
+                $('.pesan1').html('mengubah isi dari class pesan 1')
+        });
+    </script>
+</body>
+</html>
